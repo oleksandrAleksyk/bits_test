@@ -1,0 +1,112 @@
+@media screen and (max-width: 750px) {
+  .adder{
+    div {
+      width: 100% !important;
+    }
+  }
+}
+
+.adder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    width: 50%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    transition: 0.5s;
+    h5 {
+      font-size: large;
+      text-align: center;
+      color: red;
+    }
+    label {
+      font-weight: 700;
+      font-size: large;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      height: 25px;
+      padding: 5px;
+      text-align: center;
+      border-radius: 5px;
+      border: none;
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      outline: none;
+      font-size: large;
+      transition: 0.5s;
+      background-color: #cdcdcd;
+      color: black;
+      &:focus {
+        border-bottom: 3px solid black;
+      }
+    }
+    select {
+      height: 35px;
+      padding-left: 10px;
+      text-align: center;
+      text-transform: capitalize;
+      outline: none;
+      border: none;
+      font-size: large;
+      border-radius: 5px;
+      background-color: #cdcdcd;
+      option {
+        font-size: large;
+        text-transform: capitalize;
+        &:focus {
+          outline: none;
+          border: none;
+          background-color: navy;
+        }
+        &:enabled {
+          outline: none;
+          border: none;
+        }
+      }
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+    .adder-button {
+      background-color: #656565;
+      color: white;
+      align-self: center;
+      width: 50%;
+      font-size: large;
+      border: none;
+      border-radius: 5px;
+      margin: 15px;
+      padding: 15px 25px;
+      outline: 1px solid transparent;
+      transition: 0.5s;
+      cursor: pointer;
+      &:disabled {
+        background-color: red;
+        color: white;
+      }
+      &:hover {
+        background-color: black;
+      }
+    }
+
+  }
+  .adder-form-error {
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    border-radius: 5px;
+  }
+  .adder-input-error {
+    border-top: 2px solid red !important;
+    border-bottom: 2px solid red !important;
+  }
+}

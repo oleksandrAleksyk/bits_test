@@ -1,0 +1,219 @@
+$table-header-cell-color: #EDEDED;
+$table-cell-color: #656565;
+$table-borders-color: #E2E2E2;
+$text-color: #000000;
+
+
+
+$cell-height: 45px;
+$cell-width: (100% / 7);
+$cell-font-size: 20px;
+$cell-font-size-mobile: $cell-font-size - 5px;
+$cell-font-size-table: medium;
+
+
+@mixin table-cell{
+  width: 100%;
+  min-height: $cell-height;
+  max-height: max-content;
+
+  text-align: center;
+  border: 1px solid $table-borders-color;
+
+  display: flex;
+  justify-content: center;
+  align-item: center;
+
+  font-size: $cell-font-size;
+  color: $text-color;
+  p {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+
+}
+@media screen and (max-width: 1200px) {
+  .table-wrapper {
+    min-width: 100% !important;
+    min-height: 50vh;
+    overflow-x: auto;
+    .table {
+      //width: 100 !important;
+      tr {
+        th {
+          font-size: $cell-font-size-table !important;
+        }
+        td {
+          font-size: $cell-font-size-table !important;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  .table-wrapper {
+    min-width: 120%;
+    overflow-x: auto;
+    .table {
+      width: 150% !important;
+      overflow-x: auto;
+      thead{
+        height: 1%;
+      }
+      tr {
+        margin-top: unset !important;
+
+        th {
+          //max-width: fit-content !important;
+          min-width: 120px !important;
+          font-size: $cell-font-size-mobile !important;
+        }
+
+        td {
+          //max-width: fit-content !important;
+          min-width: 120px !important;
+          font-size: $cell-font-size-mobile !important;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .table-wrapper {
+    .table {
+      tr{
+        margin-top: unset !important;
+        th {
+          min-width: 80px !important;
+          font-size: 12px !important;
+        }
+        td {
+          min-width: 80px !important;
+          font-size: 12px !important;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 420px) {
+  .table-wrapper {
+    .table {
+      tr{
+        margin-top: unset !important;
+        th {
+          min-width: 60px !important;
+          font-size: 10px !important;
+        }
+        td {
+          min-width: 60px !important;
+          font-size: 10px !important;
+        }
+      }
+    }
+  }
+}
+.table-wrapper {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  .table {
+    width: 85%;
+    table-layout: fixed;
+    position: relative;
+    tr {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      th {
+        @include table-cell;
+        background-color: $table-header-cell-color;
+      }
+      td {
+        @include table-cell;
+        background-color: $table-cell-color;
+        color: white;
+      }
+      .control-button{
+        position: absolute;
+        right: 0px;
+        align-self: center;
+        transform: translate(110%,0%);
+        display: flex;
+        align-items: center ;
+        justify-content: center;
+        @mixin icon {
+          width: 24px;
+          height: 24px;
+          content: "";
+          display: block;
+          cursor: pointer;
+        }
+        .edit{
+          //background: url('../../../../assets/icons8-edit-24 .png') no-repeat center;
+          margin-right: 5px;
+          @include icon;
+        }
+        .delete{
+          //background: url('../../../../assets/icons8-remove-24.png') no-repeat center;
+          @include icon;
+        }
+      }
+
+    }
+
+  }
+}
+.loader{
+  margin-top: 100px;
+    width: 50px;
+    height: 50px;
+    border-left: 5px solid #656565;
+    border-right: 5px solid #656565;
+    border-radius: 50% ;
+    transition: 0.5s;
+  &:hover {
+    background-color: black;
+    border-left: 15px solid black;
+    border-right: 15px solid black;
+  }
+}
+.rotate-center {
+  -webkit-animation: rotate-center 1s ease-in-out infinite both;
+  animation: rotate-center 1s ease-in-out infinite both;
+}
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.single-row {
+    .control {
+      p {
+        display: flex;
+        justify-content: space-around !important;
+        span {
+          cursor: pointer;
+        }
+      }
+    }
+}
