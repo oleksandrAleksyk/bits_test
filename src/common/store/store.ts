@@ -1,6 +1,5 @@
 import {action, makeAutoObservable, observable} from "mobx";
 import {BooksInterface} from "../interfaces/books-interface";
-
 class Store{
     constructor() {
         makeAutoObservable(this,{
@@ -44,6 +43,7 @@ class Store{
                 .then((res) => {
                     if (res.status === 201 || res.status === 204) {
                         alert("Successfully added");
+                        window.location.replace('/books');
                         this.getBooks();
                     }
                 })
@@ -62,6 +62,7 @@ class Store{
                     if (res.status === 200 || res.status === 204) {
                         this.getBooks();
                         this.changeUpdateState(true);
+
                     }
                 })
         }

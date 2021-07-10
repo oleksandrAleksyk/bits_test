@@ -1,6 +1,4 @@
-import {Link} from 'react-router-dom';
 import {useEffect, useState} from "react";
-
 import './edit-modal.scss';
 import store from "../../../../common/store/store";
 export default function EditModal(props:any){
