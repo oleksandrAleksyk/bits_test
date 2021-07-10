@@ -84,6 +84,7 @@ class Store{
                 .then((res) => {
                     if (res.status===200) {
                         this.getBooks();
+                        alert("Successfully edited");
                     }
                 })
 

@@ -61,7 +61,7 @@ export default function EditModal(props:any){
             }
         }
         return(
-            <div className={'adder'}>
+            <div className={'edit-modal'}>
                 <div className={formHasError?"adder-form-error":""}>
 
                     <label>Book Title</label>

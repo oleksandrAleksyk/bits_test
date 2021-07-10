@@ -1,14 +1,22 @@
 @media screen and (max-width: 750px) {
-  .adder{
+  .edit-modal{
     div {
       width: 100% !important;
+      padding-top: 80px;
     }
   }
 }
 
-.adder {
+.edit-modal {
   width: 100%;
+  min-height: 90vh;
+  height: 50%;
+  z-index: 5;
+  background-color: white;
   display: flex;
+  position: absolute;
+  top: 0px;
+
   justify-content: center;
   align-items: center;
   div {

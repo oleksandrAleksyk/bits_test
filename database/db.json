@@ -1,3 +1,11 @@
 {
-  "books": []
+  "books": [
+    {
+      "title": "Alice",
+      "author": "Lewis",
+      "category": "drama",
+      "isbn": 564654132,
+      "id": 1
+    }
+  ]
 }
